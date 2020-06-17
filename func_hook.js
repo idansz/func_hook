@@ -3,7 +3,7 @@
 // adb shell "am start -n com.package/com.YourMainActivity"
 // adb shell "su -c /data/local/tmp/<<frida-server>>"
 
-var apis = [
+var methods_too_hook = [
     {
         class: 'java.net.URL',
         func: 'openConnection',
