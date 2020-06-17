@@ -139,7 +139,7 @@ function hook(api, callback) {
 }
 
 Java.performNow(function () {
-    apis.forEach(function (api, _) {
+    methods_too_hook.forEach(function (api, _) {
         hook(api, function (originalResult, message) {
             message.returnValue = originalResult
             if (originalResult && typeof originalResult === 'object') {
