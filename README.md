@@ -5,8 +5,8 @@
 
 3. load func_hook.js:
 
-    `frida -U com.package -l func_hook.js` 
+    `frida -U -l func_hook.js com.package.myapp` 
     
-**OR** if you want to spawn the app with frida to catch earlier methods `frida -U com.package -l -f func_hook.js`    
+**OR** if you want to spawn the app with frida to catch earlier methods `frida -U -l func_hook.js -f com.package.myapp`    
 
-**OR** to catch other foreground stuff `frida -FU com.package -l func_hook.js`
+**OR** to catch all background stuff `frida -FU -l func_hook.js`
