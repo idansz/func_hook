@@ -47,7 +47,7 @@ var methods_to_hook = [
 ];
 
 //TODO: function to mess with [object Object] or char codes
-function extract_object(obj) {
+// function extract_object(obj) {
     // var stringified_obj = JSON.stringify(obj)
     // console.log("[stringify]", stringified_obj)
     // var charCodesArr = stringified_obj.replace(/\[/, '').replace(/\]/, '').split(",");
@@ -56,7 +56,7 @@ function extract_object(obj) {
     //     chr_code_str += String.fromCharCode(charCodesArr[i]);
     // }
     // console.log(("[chr-code]", chr_code_str))
-}
+// }
 
 // Dynamic Hooks
 function hook(api, callback) {
@@ -95,12 +95,12 @@ function hook(api, callback) {
 
                 var retval = this[func].apply(this, mod_args);
                               
-                if (typeof mod_args === 'object') {
-                    extract_object(mod_args)
-                }
-                if (typeof retval === 'object') {
-                    extract_object(retval)
-                }
+                // if (typeof mod_args === 'object') {
+                //     extract_object(mod_args)
+                // }
+                // if (typeof retval === 'object') {
+                //     extract_object(retval)
+                // }
 
                 if (callback) {
                     var calledFrom = Exception.$new().getStackTrace().toString().split(',')[1];
