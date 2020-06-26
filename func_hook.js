@@ -58,22 +58,6 @@ function extract_object(obj) {
     // console.log(("[chr-code]", chr_code_str))
 }
 
-// Get All func Implementations
-function get_implementations(toHook) {
-    var imp_args = []
-    toHook.overloads.forEach(function (impl, _) {
-        if (impl.argumentTypes) {
-            var args = [];
-            var argTypes = impl.argumentTypes
-            argTypes.forEach(function (arg_type, __) {
-                args.push(arg_type.className)
-            });
-            imp_args.push(args);
-        }
-    });
-    return imp_args;
-}
-
 // Dynamic Hooks
 function hook(api, callback) {
     var Exception = Java.use('java.lang.Exception');
