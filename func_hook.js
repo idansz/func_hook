@@ -3,7 +3,7 @@
 // adb shell "am start -n com.package/com.YourMainActivity"
 // adb shell "su -c /data/local/tmp/<<frida-server>>"
 
-var methods_too_hook = [
+var methods_to_hook = [
     {
         class: 'java.net.URL',
         func: 'openConnection',
@@ -139,7 +139,7 @@ function hook(api, callback) {
 }
 
 Java.performNow(function () {
-    methods_too_hook.forEach(function (api, _) {
+    methods_to_hook.forEach(function (api, _) {
         hook(api, function (originalResult, message) {
             message.returnValue = originalResult
             if (originalResult && typeof originalResult === 'object') {
