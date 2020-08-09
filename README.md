@@ -15,3 +15,5 @@ Perform dynamic function hooking to currently running Android applications. Can 
 **OR** if you want to spawn the app with frida to catch earlier methods `frida -U -l func_hook.js -f com.package.myapp`    
 
 **OR** to catch all background stuff `frida -FU -l func_hook.js`
+
+rofl
